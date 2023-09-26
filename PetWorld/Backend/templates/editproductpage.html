@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT PRODUCT</title>
+</head>
+<body>
+<div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Basic form elements</h4>
+                    <p class="card-description"> Basic form elements </p>
+                    <form class="forms-sample" METHOD="post" action="{% url 'updateproduct' dataid=datas.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                        <label for="exampleSelectGender">CATEGORY</label>
+                        <select class="form-control" id="exampleSelectGender" name="category"  value="{{datas.CATEGORY}}">
+                          <option>Select</option>
+                            {% for d in da %}
+                            <option>{{ d.NAME }}</option>
+                            {% endfor %}
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name" value="{{ datas.NAME }}">
+                      </div>
+                        <div class="form-group">
+                        <label for="exampleInputCity1">QUANTITY</label>
+                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="Quantity" name="quantity" value="{{ datas.QUANTITY }}">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputCity1">PRIZE</label>
+                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="Prize" name="prize" value="{{ datas.PRIZE }}">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Discription</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Discription" name="discription" value="{{datas.DISCRIPTION}}">
+                      </div>
+                        <div class="form-group">
+                        <label>File upload</label>
+                            <img src="{{datas.IMAGE.url}}" width="100px" height="100px">
+                       <input type="file" name="image">
+                      </div>
+                      <button onclick="alertfunction()" type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+<script>
+  function alertfunction(){
+  window.alert("EDITED SUCCESSFULLY")
+  }
+</script>
+</body>
+</html>
+{% endblock %}

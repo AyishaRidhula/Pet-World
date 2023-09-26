@@ -1,0 +1,409 @@
+<!--<!DOCTYPE html>-->
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Maternity world</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'cartpage/assets/img/favicon.PNG' %}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'cartpage/assets/css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'cartpage/assets/bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'cartpage/assets/css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'cartpage/assets/css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'cartpage/assets/css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'cartpage/assets/css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'cartpage/assets/css/main.css' %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{% static 'cartpage/assets/css/responsive.css' %}">
+
+
+
+
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Checkout example · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'cartpage/checkout/checkstyle.css' %}">
+
+
+</head>
+<body>
+
+	<!--PreLoader-->
+
+    <!--PreLoader Ends-->
+
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="{% url 'homepage' %}">
+								<img src="{% static 'cartpage/assets/img/adminlogo.png' %}" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li><a href="{% url 'homepage' %}">HOME</a>
+
+								</li>
+                                <li><a href="{% url 'cat' %}">CATEGORIES</a></li>
+								<li><a href="{% url 'aboutpage' %}">ABOUT US</a></li>
+
+								<li><a href="{% url 'contactpage' %}">CONTACT</a></li>
+
+								{% if request.session.username1 %}
+								<li><a href=""><B> <i class="fa fa-user">&nbsp;&nbsp;</i>{{ request.session.username1 }}</B></a>
+									{% endif %}
+									<ul class="sub-menu">
+										<li><a href="">SIGN IN/SIGN UP</a></li>
+										<li><a href="">LOGOUT</a></li>
+									</ul>
+								</li>
+								<li>
+									<div class="header-icons">
+
+									</div>
+								</li>
+
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+	<!-- search area -->
+	<div class="search-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<span class="close-btn"><i class="fas fa-window-close"></i></span>
+					<div class="search-bar">
+						<div class="search-bar-tablecell">
+							<h3>Search For:</h3>
+							<input type="text" placeholder="Keywords">
+							<button type="submit">Search <i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end search arewa -->
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Grab Your Oder Now!</p>
+						<h1>CHECKOUT</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+    <div class="container">
+  <div class="py-5 text-center">
+    <h2>CECKOUT FORM AND PAYMENT</h2>
+  </div><BR><BR><BR><BR>
+
+  <div class="row">
+
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">YOUR CART</span>
+      </h4>
+        {% for  d in data %}
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+          <div>
+            <h6 class="my-0">{{ d.Name }}</h6>
+            <small class="text-muted">{{ d.Quantity }}</small>
+          </div>
+          <span class="item-price"> {{ d.Total }}</span>
+        </li>
+           <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+
+        </li>
+        {% endfor %}
+          <div>
+            <h6 class="my-0">SHIPPING</h6>
+          </div>
+          <span class="item-price" style="text-align: right;">40₹</span>
+
+           <button id="calculateTotal" class="btn btn-primary btn-lg btn-block">Calculate Total</button>
+        <li class="list-group-item d-flex justify-content-between">
+          <span >Total (INR)</span>
+          <strong><p id="totalPrice"></p></strong>
+        </li>
+
+
+      </ul>
+
+    </div>
+
+
+    <div class="col-md-8 order-md-1">
+      <U><h4 class="mb-3">BILLING ADDRESS</h4></U>
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" required>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Address</label>
+            <textarea class="form-control"  id="address" placeholder=" Enter Your Address " required></textarea>
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label>Country</label>
+              <input type="text" class="form-control" placeholder=" Enter Your Country" required>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label >State</label>
+              <input type="text" class="form-control" placeholder=" Enter Your State" required>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zip">Pincode</label>
+            <input type="text" class="form-control" id="zip" placeholder="Pincode" required>
+            <div class="invalid-feedback">
+              Zip code required.
+            </div>
+          </div>
+        </div>
+
+        <U><h4 class="mb-3">PAYMENT</h4></U>
+
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="cc-name">Name on card</label>
+            <input type="text" class="form-control" id="cc-name" placeholder="  " required>
+            <small class="text-muted">Full name as displayed on card</small>
+            <div class="invalid-feedback">
+              Name on card is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="cc-number">Credit card number</label>
+            <input type="text" class="form-control" id="cc-number" placeholder=" eg:- 6756 7787 5654 0967 " required>
+            <div class="invalid-feedback">
+              Credit card number is required
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="cc-expiration">Expiration</label>
+            <input type="date" class="form-control" id="cc-expiration" min="2023-02-28" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="cc-cvv">CVV</label>
+            <input type="text" class="form-control" id="cc-cvv" placeholder="123" required>
+            <div class="invalid-feedback">
+              Security code required
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+             </form>
+          <form method="post" action="{% url 'homepage' %}"enctype="multipart/form-data">
+              {% csrf_token %}
+
+        <button onclick="alertfunction()" class="btn btn-primary btn-lg btn-block" type="submit">Proceed</button>
+                </form>
+
+    </div>
+  </div>
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+        <script src="https://getbootstrap.com/docs/4.3/examples/checkout/form-validation.js"></script>
+
+
+
+
+
+	<!-- footer -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights 2023- <a href="">www.maternity.com</a>,<br>
+
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script>
+  function alertfunction(){
+  window.alert("ORDER PLACED SUCCESSFULLY")
+  }
+</script>
+	<!-- end footer -->
+
+	<!-- copyright -->
+
+	<!-- end copyright -->
+
+	<!-- jquery -->
+	<script src="{% static 'cartpage/assets/js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'cartpage/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'cartpage/assets/js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'cartpage/assets/js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'cartpage/assets/js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'cartpage/assets/js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'cartpage/assets/js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'cartpage/assets/js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'cartpage/assets/js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'cartpage/assets/js/main.js' %}"></script>
+
+
+<script>
+// Get a reference to the Calculate Total button and the Total Price paragraph
+var calculateButton = document.getElementById("calculateTotal");
+var totalPriceElement = document.getElementById("totalPrice");
+
+// Add a click event listener to the Calculate Total button
+calculateButton.addEventListener("mouseover", function() {
+  // Get all the item prices
+  var itemPrices = document.getElementsByClassName("item-price");
+
+  // Loop through the item prices and calculate the total price
+  var totalPrice = 0 ;
+
+  for (var i = 0; i < itemPrices.length; i++) {
+    totalPrice += parseFloat(itemPrices[i].innerHTML);
+  }
+
+  // Update the Total Price element with the calculated total price
+  totalPriceElement.innerHTML =totalPrice.toFixed(2);
+});
+
+</script>
+
+</body>
+</html>

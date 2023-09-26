@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DISPLAY CONTACT</title>
+</head>
+<body>
+<div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">display contact</h4>
+                    <p class="card-description"><code></code>
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th> Name</th>
+                            <th>Last Name </th>
+                            <th>Email</th>
+                              <th> Subject   </th>
+                              <th> Message   </th>
+                              <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for d in data %}
+                        <tr>
+                            <td>{{d.Name}}</td>
+                            <td>{{d.LName}}</td>
+                            <td>{{d.Email}}</td>
+                            <td>{{d.Subject}}</td>
+                            <td>{{d.Message}}</td>
+
+                            <td>
+                                <form action="{% url 'deletemessage' dataid=d.id %}">
+                                    <button onclick="deletefunction()" type="submit" class="btn btn-success">DELETE</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+<script>
+  function deletefunction(){
+  window.alert("DELETED SUCCESSFULLY")
+  }
+</script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>category</title>
+</head>
+<body>
+<div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">CATEGORY</h4>
+                    <form class="forms-sample" method="post" action="{% url 'savecategory' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                      <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name">
+                      </div>
+                          <div class="form-group">
+                        <label for="exampleInputName1">Discription</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Discription" name="discription">
+                      </div>
+                      <div class="form-group">
+                        <label>File upload</label>
+                          <input type="file" name="image">
+                      </div>
+                      <button onclick="alertfunction()" type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+<script>
+  function alertfunction(){
+  window.alert("ADDED SUCCESSFULLY")
+  }
+</script>
+</body>
+</html>
+{% endblock %}

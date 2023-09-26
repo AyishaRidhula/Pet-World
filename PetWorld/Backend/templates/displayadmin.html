@@ -1,0 +1,68 @@
+<!--<!DOCTYPE html>-->
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DISPLAY ADIMIN DETAILS</title>
+</head>
+<body>
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+       <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th> NAME </th>
+            <th> EMAIL </th>
+            <th> NUMBER </th>
+            <th> USERNAME </th>
+            <th> PASSWORD </th>
+            <th> IMAGE</th>
+            <th>   </th>
+            <th>   </th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for d in data %}
+          <tr>
+            <td>{{ d.NAME }}</td>
+            <td>{{ d.EMAIL }}</td>
+            <td>{{ d.NUMBER }} </td>
+            <td>{{ d.USERNAME }}</td>
+            <td>{{ d.PASSWORD }}</td>
+            <td>
+              <img src="{{d.IMAGE.url}}"  height="50px" width="50px">
+            </td>
+            <td>
+              <form action="{% url 'editadminpage' dataid=d.id %}">
+                <button type="submit" class="btn btn-success">edit </button>
+              </form>
+            </td>
+            <td>
+              <form onclick="alertfunction()" action="{% url 'deleteadmin' dataid=d.id %}">
+                <button onclick="deletefunction()" type="submit" class="btn btn-success">delete </button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function alertfunction(){
+  window.alert("ADDED SUCCESSFULLY")
+  }
+</script>
+<script>
+  function deletefunction(){
+  window.alert("DELETED SUCCESSFULLY")
+  }
+</script>
+</body>
+</html>
+{% endblock %}
